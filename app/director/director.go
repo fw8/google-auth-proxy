@@ -12,5 +12,6 @@ func NewDirector() func(req *http.Request){
 	return func(req *http.Request){
 		req.URL.Host = host
 		req.URL.Scheme = scheme
+		req.Host = host
 	}
 }
