@@ -16,5 +16,9 @@ docker build -t google-auth-proxy . --build-arg app_env=production
 ## Start
 
 ```bash
-docker run -it -p 8080:8080 -e HOST=some-cloud-run-service -e SCHEME=https -e GOOGLE_APPLICATION_CREDENTIALS=/creds.json -v /path/to/gsa.json:/gsa.json  google-auth-proxy
+docker run -it -p 8080:8080 \
+  -e HOST=some-cloud-run-service \
+  -e SCHEME=https \
+  -e GOOGLE_APPLICATION_CREDENTIALS=/gsa.json -v /path/to/gsa.json:/gsa.json \
+  google-auth-proxy
 ```
